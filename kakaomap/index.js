@@ -5,6 +5,7 @@ const options = {
 };
 
 const map = new kakao.maps.Map(container, options);
+const $button = document.getElementById('button');
 
 const positions = [
   {
@@ -58,8 +59,39 @@ const createInfoWindow = (marker) => {
   })
 }
 
+const success = (position) => {
+  const {latitude, longitude} = position.coords;
+  const latlng = new kakao.maps.LatLng(latitude, longitude);
+  map.panTo(latlng);
+  new kakao.maps.Marker({
+    map: map,
+    position: latlng,
+    title: '현재위치',
+    image: createMarkerImage()
+  })
+}
+
+const error = (error) => {
+  if (error.value === 1) {
+    alert('위치 접근 권한을 허용해 주십시오')
+  } else if (error.value === 2) {
+    alert('위치를 찾을 수 없습니다.')
+  } else if (error.value === 3) {
+    alert('오류입니다.')
+  }
+}
+
+const createGeolocation = () => {
+  if (!navigator.geolocation) {
+    alert('현재 위치를 가져 올 수 없습니다.')
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}
+
 function init () {
   createMarker()
+  $button.addEventListener('click', () => { createGeolocation()});
 }
 
 init()
