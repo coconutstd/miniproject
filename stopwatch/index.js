@@ -25,13 +25,16 @@ class StopWatch {
     const minutes = date.getUTCMinutes()
     const seconds = date.getUTCSeconds()
     const milleseconds = date.getUTCMilliseconds()
-    return `${this.addZero(minutes)}:${this.addZero(seconds)}.${this.addZero(milleseconds)}`
+    
+    return [this.addZero(minutes), this.addZero(seconds), this.addZero(milleseconds)]
   } 
 
   startTimer() {
     this.elapsedTime = Date.now() - this.startTime
-    const time = this.timeToString(this.elapsedTime)
-    this.timer.innerHTML = time;
+    const [minutes, seconds, milleseconds] = this.timeToString(this.elapsedTime)
+    this.timer.querySelector('.minutes').innerHTML = minutes
+    this.timer.querySelector('.seconds').innerHTML = seconds
+    this.timer.querySelector('.milleseconds').innerHTML = milleseconds
   }
 
   start() {
