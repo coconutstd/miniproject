@@ -1,7 +1,14 @@
-
-// 쓰로틀
-
 const $progressBar = document.querySelector('.progress-bar')
+
+let timerId = null;
+
+const throttle = (callback, time) => {
+  if (timerId) return
+  timerId = setTimeout(() => {
+    callback()
+    timerId= null
+  }, time)
+}
 
 const onScroll = () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement
@@ -10,4 +17,4 @@ const onScroll = () => {
   $progressBar.style.width = scrollWidth + '%'
 }
 
-window.addEventListener('scroll', onScroll);
+window.addEventListener('scroll', () => throttle(onScroll, 100));
