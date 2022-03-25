@@ -210,6 +210,13 @@ nav.layout-navigation {
   margin-top: 20px;
 }
 
+.today-house-item h2 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 12px 0;
+}
+
 .today-house-item .today-house-item-image {
   border-radius: 4px;
   height: 111px;
@@ -223,7 +230,7 @@ nav.layout-navigation {
   position: fixed;
   width: 250px;
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   top: 0;
   left: 0;
   z-index: 100;
@@ -232,7 +239,7 @@ nav.layout-navigation {
   transform: translateX(-110%);
 }
 
-.side-bar {
+.side-bar a{
   color: #1d1d1f;
   font-weight: bold;
   font-size: 22px;
