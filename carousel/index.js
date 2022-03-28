@@ -5,9 +5,9 @@ const get = (target) => {
 
 class Carousel {
   constructor(element) {
-    this.carousel = element
+    this.carouselElement = element
     this.itemClassName = 'carousel_item'
-    this.items = this.carousel.querySelectorAll('.carousel_item')
+    this.items = this.carouselElement.querySelectorAll('.carousel_item')
     this.totalItems = this.items.length
     this.current = 0
     this.initCarousel()
@@ -62,8 +62,8 @@ class Carousel {
   }
 
   setEventListener() {
-    this.prevButton = this.carousel.querySelector('.carousel_button--prev')
-    this.nextButton = this.carousel.querySelector('.carousel_button--next')
+    this.prevButton = this.carouselElement.querySelector('.carousel_button--prev')
+    this.nextButton = this.carouselElement.querySelector('.carousel_button--next')
 
     this.prevButton.addEventListener('click', () => this.movePrev())
     this.nextButton.addEventListener('click', () => this.moveNext())
@@ -74,5 +74,5 @@ class Carousel {
 
 document.addEventListener('DOMContentLoaded', () => {
   const element = get('.carousel')
-  const carousel = new Carousel(element)
+  new Carousel(element)
 })
