@@ -1,0 +1,76 @@
+.header-area {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #03c75a;
+  color: #fff;
+  z-index: 5000;
+
+  .place-header {
+    display: flex;
+    height: $place-header-height;
+    align-items: center;
+    justify-content: space-between;
+
+    .link-back {
+      display: flex;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .my-orders {
+      padding-right: $m-padding;
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+
+  .place-tab {
+    display: flex;
+    height: $place-tab-height;
+    background-color: #03b758;
+
+    .tab-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      width: 100%;
+
+      .tab {
+        flex: 1;
+        padding: 0 12px;
+        font-size: 16px;
+        text-align: center;
+        opacity: 0.7;
+
+        &.is-active {
+          font-weight: 700;
+          opacity: 1;
+          .txt::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            height: 2px;
+            background-color: #fff;
+          }
+        }
+
+        .txt {
+          position: relative;
+          display: inline-block;
+          padding: 0 4px;
+          line-height: $place-tab-height;
+        }
+      }
+    }
+  }
+}
