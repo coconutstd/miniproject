@@ -33,7 +33,7 @@ function storeUser(email, password, salt, fn) {
                         S: token,
                     },
                 },
-                ContiditionExpression: "attribute_not_exists (email)",
+                ConditionExpression: "attribute_not_exists (email)",
             },
             function (err, data) {
                 if (err) return fn(err)
@@ -86,22 +86,30 @@ function sendVerificationEmail(email, token, fn) {
     )
 }
 
-exports.handler = (event) => {
-    const email = event.email
-    const clearPassword = event.password
+exports.handler = (event, context, callback) => {
+    var email = event.email
+    var clearPassword = event.password
+
     cryptoUtils.computeHash(clearPassword, function (err, salt, hash) {
         if (err) {
-            if (err.code === "ConditionalCheckFailedException") {
-                callback(null, { created: false })
-            } else {
-                callback("Error in storeUser: " + err)
-            }
+            callback("Error in hash: " + err)
         } else {
-            sendVerificationEmail(email, token, function (err, data) {
+            storeUser(email, hash, salt, function (err, token) {
                 if (err) {
-                    callback("Error in sendVerificationEmail: " + err)
+                    if (err.code == "ConditionalCheckFailedException") {
+                        // userId already found
+                        callback(null, { created: false })
+                    } else {
+                        callback("Error in storeUser: " + err)
+                    }
                 } else {
-                    callback(null, { created: true })
+                    sendVerificationEmail(email, token, function (err, data) {
+                        if (err) {
+                            callback("Error in sendVerificationEmail: " + err)
+                        } else {
+                            callback(null, { created: true })
+                        }
+                    })
                 }
             })
         }
