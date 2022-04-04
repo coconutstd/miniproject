@@ -34,6 +34,7 @@ function signup() {
             if (err) console.log(err, err.stack)
             else {
                 const output = JSON.parse(data.Payload)
+                console.log(output)
                 if (output.created) {
                     $result.innerHTML =
                         "User " +
