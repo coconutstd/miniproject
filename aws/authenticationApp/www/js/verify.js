@@ -3,7 +3,7 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: "<IDENTITY_POOL_ID>",
 })
 
-const lambda = new AWS.lambda()
+const lambda = new AWS.Lambda()
 
 const result = document.getElementById("result")
 
