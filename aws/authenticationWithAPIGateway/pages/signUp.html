@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../assets/reset.css" />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <title>가입하기</title>
+    </head>
+    <body>
+        <div class="login-component">
+            <h1 class="greeting">가입페이지</h1>
+            <p class="greeting-text">
+                안전한 사용자 환경을 위해 <br />
+                최소한의 정보만 받습니다.
+            </p>
+            <button class="facebook-login">페이스북 가입하기</button>
+            <span>Or</span>
+            <form class="signup-form">
+                <input
+                    type="email"
+                    placeholder="이메일 주소를 입력해주세요"
+                    class="email flex-item"
+                />
+                <input
+                    type="password"
+                    placeholder="비밀번호를 입력해주세요"
+                    class="password flex-item"
+                />
+                <input
+                    type="password"
+                    placeholder="비밀번호를 한 번 더 입력해주세요"
+                    class="password-confirm flex-item"
+                />
+                <button type="submit" class="submit">제출</button>
+            </form>
+        </div>
+        <div class="result"></div>
+        <script src="../dist/my-app.js"></script>
+    </body>
+</html>
