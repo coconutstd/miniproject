@@ -4,10 +4,45 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./style.css" />
         <title>authenticateWithAPIGateway</title>
     </head>
     <body>
+        <div class="login-component">
+            <h1 class="greeting">Join the community</h1>
+            <p class="greeting-text">
+                Take your art to the next level. Get it seen by millions of
+                people
+            </p>
+            <button class="facebook-login">Join with Facebook</button>
+            <span>Or</span>
+            <form class="signup-form">
+                <div class="name-group flex-item">
+                    <input
+                        type="text"
+                        placeholder="First name"
+                        class="first-name"
+                    />
+                    <input
+                        type="text"
+                        placeholder="Last name"
+                        class="last-name"
+                    />
+                </div>
+                <input
+                    type="email"
+                    placeholder="Email"
+                    class="email flex-item"
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    class="password flex-item"
+                />
+                <button type="submit" class="submit">Create New Account</button>
+            </form>
+        </div>
         <script src="./dist/my-app.js"></script>
     </body>
 </html>
