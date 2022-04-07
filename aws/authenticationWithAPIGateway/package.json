@@ -1,19 +1,28 @@
 {
-    "name": "authentication-with-apiateway",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "webpack-cli": "^4.9.2"
-    },
-    "dependencies": {
-        "amazon-cognito-identity-js": "^5.2.8"
-    }
+  "name": "authentication-with-apiateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.58.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.58.0",
+    "amazon-cognito-identity-js": "^5.2.8"
+  }
 }

@@ -1,11 +1,32 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtratPlugin = require("mini-css-extract-plugin")
+
 module.exports = {
-    // Example setup for your project:
-    // The entry module that requires or imports the rest of your project.
-    // Must start with `./`!
-    entry: "./src/index.js",
-    // Place output files in `./dist/my-app.js`
-    output: {
-        path: __dirname + "/dist",
-        filename: "my-app.js",
-    },
+  mode: "none",
+  entry: "./src/index.js",
+  output: {
+    path: __dirname + "/dist",
+    filename: "my-app.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtratPlugin.loader,
+          },
+          "css-loader",
+        ],
+      },
+    ],
+  },
+  devServer: {
+    port: 9000,
+    hot: true,
+  },
+  plugins: [
+    new MiniCssExtratPlugin(),
+    new HtmlWebpackPlugin({ template: "index.html" }),
+  ],
 }
