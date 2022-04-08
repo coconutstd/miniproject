@@ -5,7 +5,11 @@
       안전한 사용자 환경을 위해 <br />
       최소한의 정보만 받습니다.
     </p>
-    <button class="facebook-login">페이스북 가입하기</button>
+    <img
+      class="naver-btn"
+      src="../assets/naver/btnG_완성형.png"
+      @click="naverLogin"
+    />
     <span>Or</span>
     <form class="signup-form">
       <input
@@ -75,7 +79,21 @@ export default {
       },
       registrationCode: "",
       isUserCreated: false,
+      naverLoginClient: {},
     }
+  },
+  head: {
+    script: [
+      {
+        src: "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js",
+      },
+    ],
+  },
+  mounted() {
+    this.naverLoginClient = new naver.LoginWithNaverId({
+      clientId: "ZPxZZldRW2kHp8q2bCgI",
+      callbackUrl: "http://localhost:3000",
+    })
   },
   methods: {
     async onClick(e) {
@@ -97,6 +115,10 @@ export default {
       if (response.$metadata.httpStatusCode === 200) {
         alert("가입성공")
       }
+    },
+    naverLogin() {
+      this.naverLoginClient.init()
+      this.naverLoginClient.reprompt()
     },
   },
 }
@@ -135,9 +157,8 @@ export default {
   text-align: center;
 }
 
-.signup-component .facebook-login {
+.signup-component .naver-btn {
   width: 364px;
-  height: 61px;
   color: white;
   background-color: #4968ad;
   font-size: 18px;
@@ -145,6 +166,7 @@ export default {
   border-radius: 5px;
   border: none;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .signup-component span {
