@@ -1,19 +1,36 @@
-import React from "react"
+import React, { useCallback } from "react"
+import { List } from "react-virtualized"
 import TodoListItem from "./TodoListItem"
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
-  return (
-    <div className="TodoList min-h-[320px] max-h-[513px] overflow-y-auto divide-y divide-solid divide-[#dee2e6]">
-      {todos.map((todo) => (
+  const rowRenderer = useCallback(
+    ({ index, key, style }) => {
+      const todo = todos[index]
+      return (
         <TodoListItem
           todo={todo}
-          key={todo.id}
+          key={key}
           onRemove={onRemove}
           onToggle={onToggle}
-        ></TodoListItem>
-      ))}
-    </div>
+          style={style}
+        />
+      )
+    },
+    [onRemove, onToggle, todos]
+  )
+
+  return (
+    <List
+      className="TodoList min-h-[320px] max-h-[513px] overflow-y-auto "
+      width={512}
+      height={513}
+      rowCount={todos.length}
+      rowHeight={57}
+      rowRenderer={rowRenderer}
+      list={todos}
+      style={{ outline: "none" }}
+    ></List>
   )
 }
 
-export default TodoList
+export default React.memo(TodoList)
