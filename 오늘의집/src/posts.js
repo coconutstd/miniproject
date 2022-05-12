@@ -39,5 +39,3 @@ const getPostsTemplate = (posts) => {
 fetchPosts().then(posts => {
   $postingContainer.innerHTML = getPostsTemplate(posts);
 }).catch(error => console.error(error));
-
-
