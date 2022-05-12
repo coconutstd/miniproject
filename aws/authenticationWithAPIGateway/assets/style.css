@@ -1,0 +1,103 @@
+.login-component {
+    width: 647px;
+    height: 871px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #c8d1e5;
+    border-radius: 5px;
+}
+
+.login-component h1 {
+    font-size: 36px;
+    font-weight: 600;
+    width: 254px;
+    max-height: 90px;
+    margin-bottom: 29px;
+    text-align: center;
+}
+
+.login-component p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 381px;
+    height: 50px;
+    line-height: 1.25em;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-component .facebook-login {
+    width: 364px;
+    height: 61px;
+    color: white;
+    background-color: #4968ad;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.login-component span {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.login-component form {
+    max-width: 364px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-component input {
+    border: 2px solid #c8d1e5;
+    border-radius: 5px;
+    padding: 19px 25px;
+    color: #1b1c40;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.login-component form .name-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-component form .name-group :first-child {
+    width: 177px;
+}
+
+.login-component form .name-group :last-child {
+    width: 177px;
+}
+
+.login-component form .flex-item {
+    margin-bottom: 22px;
+}
+
+.login-component .submit {
+    width: 364px;
+    height: 61px;
+    color: white;
+    background-color: #1e2c4b;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.login-component button {
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

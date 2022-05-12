@@ -1,0 +1,16 @@
+service: myapi
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+  stage: dev
+  environment: ${file(./secrets.json)}
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: "*"

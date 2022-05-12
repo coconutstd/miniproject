@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../assets/reset.css" />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <title>이메일 인증</title>
+    </head>
+    <body>
+        <div class="login-component">
+            <h1 class="greeting">이메일 인증</h1>
+            <p class="greeting-text">메일로 전송된 6자리 코드를 입력해주세요</p>
+            <form class="signup-form">
+                <input type="text" class="verfication-code" maxlength="6" />
+                <button type="submit" class="submit verify">제출</button>
+            </form>
+        </div>
+        <div class="result"></div>
+        <script src="../dist/my-app.js"></script>
+    </body>
+</html>
