@@ -1,24 +1,24 @@
-(()=> {
+;(() => {
   const get = (target) => document.querySelector(target)
-  const $posts = get('.posts')
-  const $loader = get('.loader')
+  const $posts = get(".posts")
+  const $loader = get(".loader")
   const limit = 10
   let total = 10
   let currentPage = 1
   let end = 100
 
   const hideLoader = () => {
-    $loader.classList.remove('show')
+    $loader.classList.remove("show")
   }
 
   const showLoader = () => {
-    $loader.classList.add('show')
+    $loader.classList.add("show")
   }
 
   const showPosts = (posts) => {
-    posts.forEach(post => {
-      const $post = document.createElement('div')
-      $post.classList.add('post')
+    posts.forEach((post) => {
+      const $post = document.createElement("div")
+      $post.classList.add("post")
       $post.innerHTML = `
           <div class="header">
             <div class="id">${post.id}.</div>
@@ -35,7 +35,7 @@
     try {
       const response = await fetchPosts(currentPage, limit)
       showPosts(response)
-    } catch(error) {
+    } catch (error) {
       console.error(error)
     } finally {
       hideLoader()
@@ -46,15 +46,15 @@
     const API_URL = `https://jsonplaceholder.typicode.com/posts?_page=${currentPage}&_limit=${limit}`
     const response = await fetch(API_URL)
     if (!response.ok) {
-      throw Error('error')
+      throw Error("error")
     }
     return await response.json()
   }
 
   const handleScroll = () => {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement    
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement
     if (total === end) {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener("scroll", handleScroll)
       return
     }
 
@@ -65,9 +65,9 @@
       return
     }
   }
-  
-  window.addEventListener('DOMContentLoaded', () => {
-    loadPosts(currentPage,limit)
-    window.addEventListener('scroll', handleScroll)
+
+  window.addEventListener("DOMContentLoaded", () => {
+    loadPosts(currentPage, limit)
+    window.addEventListener("scroll", handleScroll)
   })
-})();
+})()
