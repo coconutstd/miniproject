@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>채팅목록</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .chat-room {
+        position: relative;
+        width: 23.438rem;
+        height: 41.688rem;
+        background-color: #f9f9fb;
+      }
+
+      .nav {
+        width: 23.438rem;
+        height: 2.75rem;
+        background-color: #5b36ac;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.75rem;
+      }
+
+      .nav-container span {
+        color: white;
+        letter-spacing: -0.12px;
+        font-size: 1.063rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+      }
+
+      .menu {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .functions button {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .content {
+        margin-top: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .room {
+        display: flex;
+        align-items: center;
+        padding: 0.563rem 0;
+      }
+
+      .room .profile {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 28px;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.938rem;
+        margin-right: auto;
+      }
+
+      .text .title {
+        letter-spacing: -0.2px;
+        font-size: 1rem;
+        color: #464052;
+        font-weight: bold;
+      }
+
+      .text .recent-message {
+        font-size: 0.813rem;
+        letter-spacing: -0.1px;
+        color: #a4a6b0;
+        font-weight: 600;
+      }
+
+      .info {
+        display: flex;
+        width: 1.813rem;
+        flex-direction: column;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .info .time {
+        font-size: 0.688rem;
+        font-weight: 600;
+        color: #363a42;
+        margin-bottom: 0.375rem;
+      }
+
+      .info .unread {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.125rem;
+        height: 1.125rem;
+        background-color: #5b36ac;
+        border-radius: 10.5px;
+        color: white;
+        font-size: 0.625rem;
+        text-align: center;
+        vertical-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-room">
+      <div class="nav">
+        <div class="nav-container">
+          <button class="menu">=</button>
+          <span>채팅</span>
+          <div class="functions">
+            <button>P</button>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="room">
+          <img class="profile" src="./img/img-profile-1.jpg" />
+          <div class="text">
+            <span class="title">장만월 사장님</span>
+            <span class="recent-message">어딘데 출근 안하니, 죽고싶니?</span>
+          </div>
+          <div class="info">
+            <span class="time">09:32</span>
+            <div class="unread">2</div>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img/img-profile-2.jpg" />
+          <div class="text">
+            <span class="title">신정근 바텐더</span>
+            <span class="recent-message"
+              >오시는 길에 와인 몇병만 사다주세요.</span
+            >
+          </div>
+          <div class="info">
+            <span class="time">02:34</span>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img/img-profile-3.jpg" />
+          <div class="text">
+            <span class="title">이미라 의사</span>
+            <span class="recent-message"
+              >휴가 잘 보내고 계신가요? 다름이 아니라 지..</span
+            >
+          </div>
+          <div class="info">
+            <span class="time">금요일</span>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img/img-profile-4.jpg" />
+          <div class="text">
+            <span class="title">구찬성 지배인</span>
+            <span class="recent-message"
+              >아 휴가셨군요. 약속은 다음으로 미루시죠!</span
+            >
+          </div>
+          <div class="info">
+            <span class="time">목요일</span>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img/img-profile-5.jpg" />
+          <div class="text">
+            <span class="title">노준석 총지배인</span>
+            <span class="recent-message"
+              >휴가에서 언제 돌아오시는지요. 돌아오시면 ..</span
+            >
+          </div>
+          <div class="info">
+            <span class="time">금요일</span>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img/img-shot-6.jpg" />
+          <div class="text">
+            <span class="title">김유나 인턴</span>
+            <span class="recent-message"
+              >304호 키를 잃어버렸어요 어떻게 해야하죠 ㅠ</span
+            >
+          </div>
+          <div class="info">
+            <span class="time">목요일</span>
+          </div>
+        </div>
+        <div class="room">
+          <img class="profile" src="./img//img-shot-7.jpg" />
+          <div class="text">
+            <span class="title">구현모</span>
+            <span class="recent-message">술먹자</span>
+          </div>
+          <div class="info">
+            <span class="time">수요일</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
